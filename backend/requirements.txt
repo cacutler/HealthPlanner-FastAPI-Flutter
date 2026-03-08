@@ -4,7 +4,9 @@ sqlalchemy>=2.0
 asyncpg
 alembic
 pydantic>=2
+pydantic[email]
 python-jose[cryptography]
 passlib[bcrypt]
 python-dotenv
 greenlet
+python-multipart

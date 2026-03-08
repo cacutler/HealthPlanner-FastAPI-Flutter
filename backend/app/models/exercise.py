@@ -13,5 +13,5 @@ class Exercise(Base):
     reps = Column(Integer)
     weight_lbs = Column(Numeric(5, 2))
     duration_seconds = Column(Integer)
-    create_at = Column(DateTime(timezone=True), server_default=func.now())
+    created_at = Column(DateTime(timezone=True), server_default=func.now())  # Fixed: was create_at
     workout = relationship("Workout", back_populates="exercises")

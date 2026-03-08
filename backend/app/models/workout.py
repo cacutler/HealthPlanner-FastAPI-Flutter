@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from app.core.database import Base
 class WorkoutType(str, enum.Enum):
-    strenght = "strength"
+    strength = "strength"  # Fixed: was strenght = "strength" (key typo)
     cardio = "cardio"
 class IntensityLevel(str, enum.Enum):
     low = "low"
@@ -22,5 +22,5 @@ class Workout(Base):
     calories_burned = Column(Integer)
     performed_at = Column(DateTime(timezone=True), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    user = relationship("User", back_populates="workouts")#Relationships
+    user = relationship("User", back_populates="workouts")
     exercises = relationship("Exercise", back_populates="workout", cascade="all, delete-orphan")

@@ -1,4 +1,4 @@
-versions: '3.9'
+version: '3.9'  # Fixed: was "versions"
 services:
   db:
     image: postgres:15
@@ -9,6 +9,6 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/li/postgresql/data
+      - postgres_data:/var/lib/postgresql/data  # Fixed: was /var/li/
 volumes:
   postgres_data:

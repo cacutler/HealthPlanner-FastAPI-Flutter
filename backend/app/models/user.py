@@ -22,7 +22,7 @@ class User(Base):
     weight_lbs = Column(Integer)
     age = Column(Integer)
     sex = Column(Enum(SexType))
-    activity__level = Column(Enum(ActivityLevel))
+    activity_level = Column(Enum(ActivityLevel))  # Fixed: was activity__level (double underscore)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     workouts = relationship("Workout", back_populates="user", cascade="all, delete-orphan")
     nutrition_logs = relationship("NutritionLog", back_populates="user", cascade="all, delete-orphan")
