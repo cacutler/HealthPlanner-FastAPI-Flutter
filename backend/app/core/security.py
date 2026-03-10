@@ -2,7 +2,7 @@ from datetime import datetime, timedelta, UTC
 from jose import jwt, JWTError
 import bcrypt
 import os
-SECRET_KEY = os.getenv("SECRET_KET", "dev-secret")
+SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
 ALGORITHM = "HS256"
 ACCESS_TOEKN_EXPIRE_MINUTES = 30
 def hash_password(password: str) -> str:
