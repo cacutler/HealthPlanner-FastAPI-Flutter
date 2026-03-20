@@ -9,7 +9,11 @@ from sqlalchemy.engine import Connection
 import asyncio
 from alembic import context
 from app.core.database import Base
-from app import models
+from app.models.user import User
+from app.models.workout import Workout
+from app.models.exercise import Exercise
+from app.models.nutrition import NutritionLog
+from app.models.weight import WeightLog
 load_dotenv()
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
